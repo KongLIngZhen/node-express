@@ -43,7 +43,7 @@ exports.signFund = (req) => {
     try {
         let size = req.pageSize;
         let no = req.pageNo;
-        const sqlStr = 'SELECT * FROM `fund` LIMIT ' + `${no},${no*size}`;
+        const sqlStr = 'SELECT * FROM `fund` LIMIT ' + `${no-1},${no*size}`;
         
         return new Promise((resolve, reject) => {
             connection.query(sqlStr, (err, result) => {
