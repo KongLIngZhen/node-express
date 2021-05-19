@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-const bcrypt = require('bcrypt');
+// const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const userModule = require('../modules/index');
 
@@ -35,11 +35,11 @@ router.post('/', async (req, res, next) => {
 
    
 
-    const isPasswordValid = bcrypt.compareSync(
-            req.body.password,
-            user.password,
-        );
-    console.log(isPasswordValid); 
+    // const isPasswordValid = bcrypt.compareSync(
+    //         req.body.password,
+    //         user.password,
+    //     );
+    // console.log(isPasswordValid); 
 
     if (!isPasswordValid) {
         return res.status(422).send({

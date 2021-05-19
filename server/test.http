@@ -1,5 +1,23 @@
-@url=http://127.0.0.1:3010
+@url=http://127.0.0.1:3011
 @json=Content-Type: application/json
+
+@html=Content-Type: text/html
+
+
+### getRankTable
+post {{url}}/api/getRankTable
+
+
+### fundRank
+post {{url}}/local/fundRank
+# {
+#     "startData": "2020-11-01",
+#     "endData": "2020-12-01" 
+# }
+
+
+### marketIndex
+post {{url}}/local/marketIndex
 
 
 ### 注册
@@ -32,3 +50,33 @@ post {{url}}/api/signFund
     "pageNo": 1
 }
 
+### 新浪指数
+POST http://image.sinajs.cn/newchart/daily/n/sh601006.gif HTTP/1.1
+{{json}}
+
+### 新浪指数
+POST http://image.sinajs.cn/newchart/monthly/n/sh000001.gif HTTP/1.1
+{{json}}
+
+### 测试接口
+POST http://10.21.0.210:3338/resume/parse.json HTTP/1.1
+{{json}}
+
+{
+    "hostname": "www",
+    "pathname": "",
+    "context": "",
+    "json": ""
+}
+
+### 测试接口
+POST http://money.finance.sina.com.cn/quotes_service/api/json_v2.php/CN_MarketData.getKLineData?symbol=sz002095&scale=60&ma=no&datalen=1023 HTTP/1.1
+{{json}}
+
+### 天天基金-所有基金名称列表代码
+GET http://fund.eastmoney.com/js/fundcode_search.js HTTP/1.1
+{{json}}
+
+### 天天基金-所有基金公司名称列表代码
+GET http://fund.eastmoney.com/js/jjjz_gs.js?dt=1463791574015 HTTP/1.1
+{{json}}
